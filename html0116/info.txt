@@ -1,0 +1,9 @@
+npm init --yes
+
+npm i express
+:Resultful API지원하는 프레임워크
+
+npm i nodemon --save-dev
+              : --save-dev로컬에서만 사용하겠다는 의미
+
+  <script src="https://kit.fontawesome.com/0f3d0186cb.js" crossorigin="anonymous"></script>

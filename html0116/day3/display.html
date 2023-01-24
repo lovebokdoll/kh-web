@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>인라인요소와 블럭요소</title>
+    <style>
+      *{
+        margin: 0;/*4군데 마진 모두 0*/
+        padding: 0;
+        box-sizing: border-box;
+        border: 1px solid red;
+      }
+      div{
+        width: 100px;
+        height: 100px;
+        background-color: aquamarine;
+      }
+      span{
+        width: 50px;
+        height: 50px;
+        background-color: purple;
+      }
+      .s1{
+        display: block;
+        width: 50px;
+        height: 50px;
+        background-color: papayawhip;
+      }
+    </style>
+  </head>
+  <body>
+    <div>div1</div>
+    <div class="d1">div1</div>
+    <span>span1</span>
+    <span class="s1">span1</span>
+  </body>
+</html>
+<!--span태그는 높이와 폭을 주어도 먹지 않는다.
+    자체적으로 크기가 없어, 크기를 지정할 수도 없다
+    블록요소는 크기를 변경할 수 있다.
+    display : inline or block or inline - block
+    none을 주면 화면에 안보임 jf.setVisible(false) -->

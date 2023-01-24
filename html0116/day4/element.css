@@ -1,0 +1,20 @@
+div,span{
+  width:100px;
+  height:100px;
+border: 2px solid black;
+margin-bottom: 20px;
+}
+
+div{
+ background-color: red;
+ display: inline-block;
+}
+
+/* 인라인요소- 크기를 가질 수 없음 */
+
+span{
+  /* 기본적으로 인라인엘리먼트처럼 전후줄바꿈이 없이 한줄에 
+  다른 엘리먼트들과 나란히 배치됨 */
+  display: block;
+  background-color: blue;
+}

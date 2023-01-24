@@ -1,0 +1,40 @@
+/* 우리가 패딩을 줬을 댸 높이와 너비가 그 패딩을 포함했을때도
+    동일한 높이와 너비가 되도록 함 */
+    *{
+      box-sizing: border-box;
+      background-color: black;
+    }
+
+    body{
+      font-family: "Courier New";
+      margin: 0px;
+      color: white;
+    }
+
+    ul{    
+    list-style: none;
+    padding-left: 0;
+    }
+a{
+  text-decoration: none;
+  color: aliceblue;
+}
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+  background-color: antiquewhite;
+}
+.navbar_menu{
+  display: flex;
+}
+.navbar_menu_item{
+  padding: 8px 12px;
+  margin: 0px 4px;
+  cursor: pointer;
+  border-radius:4px
+}
+.navbar_menu_item:hover{
+  background-color: rgb(16, 152, 242);
+}

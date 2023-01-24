@@ -1,0 +1,22 @@
+*{
+  margin: 0;
+  padding: 0;
+  width: 300px;
+  height: 300px;
+  
+}
+
+.parent{
+  border: 10px solid black;
+   position: relative;
+}
+
+.child{
+width: 100px;
+height: 100px;
+ right: 0;
+ bottom: 0;
+ position: absolute; /* 좌표값에 따른 위치를 따를 수 있다. */
+border: 10px solid rgb(168, 51, 51);
+ 
+}

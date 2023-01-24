@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./coordinate.css">
+</head>
+<body>
+  <div class="line horizontal"></div>
+  <div class="line vertical"></div>
+  <img class= "target" src="../images/target.png" alt="타켓">
+  <span class="loc">여기</span>
+  <script type="text/javascript">
+    //자바스크립트 언어로 html문서의 태그에 접근하려면 document객체가 제공하는
+    //함수 querySelector사요한다
+    const vertical=document.querySelector(".vertical");
+    const horizontal=document.querySelector(".horizontal");
+    const target=document.querySelector(".target");
+    const loc=document.querySelector(".loc");
+    document.addEventListener("mousemove",(event)=>{
+      const x=event.clientX;
+      const y=event.clientY;
+      console.log(`${x},${y}`);
+      vertical.style.left=`${x}px`;
+      horizontal.style.top=`${y}px`;
+      target.style.left=`${x}px`;
+      target.style.top=`${y}px`;
+      loc.style.left=`${x}px`;
+      loc.style.top=`${y}px`;
+      loc.innerHTML=`${x},${y}`
+    });
+  </script>
+</body>
+</html>

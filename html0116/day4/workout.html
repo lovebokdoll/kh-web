@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>workoutList</title>
+    <script
+      src="https://kit.fontawesome.com/0f3d0186cb.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./workout.css" />
+    <!-- 외부에 자스 호출할 때 반드시 DOM tree완성되어 있어야함
+          자바스트립트 파일은 웹서버로부터 다운로드 받고 브라우저가 실행을
+          하는데 이때 해당 html문서에 DOM구성이 완료되지 않으면 
+           이벤트 소스의 정보가 undefine상태이므로 에러가 발생함.
+           TypeError발생한다~~ 이때 defer붙여주면 DOM tree가 완성될때 까지 기다렸다가
+          실행한다. 버튼의 객체를 인지하므로 에러가 발생 안함.-->
+    <script defer src="./workout.js"></script>
+  </head>
+  <body>
+    <section class="list">
+      <!--헤더 영역-->
+      <header class="header">WORKOUT</header>
+      <ul class="items">
+        <li class="item_row">
+          <div class="item">
+            <span class="item_name">데드리프트</span>
+            <button class="btn_delete">
+              <i class="fas fa-trash-alt"></i>
+            </button>
+          </div>
+        </li>
+        <li class="item_row">
+          <div class="item">
+            <span class="item_name">스쿼트</span>
+            <button class="btn_delete">
+              <i class="fas fa-trash-alt"></i>
+            </button>
+          </div>
+        </li>
+        <li class="item_row">
+          <div class="item">
+            <span class="item_name">스쿼트</span>
+            <button class="btn_delete">
+              <i class="fas fa-trash-alt"></i>
+            </button>
+          </div>
+        </li>
+        <li class="item_row">
+          <div class="item">
+            <span class="item_name">스쿼트</span>
+            <button class="btn_delete">
+              <i class="fas fa-trash-alt"></i>
+            </button>
+          </div>
+        </li>
+        <li class="item_row">
+          <div class="item">
+            <span class="item_name">스쿼트</span>
+            <button class="btn_delete">
+              <i class="fas fa-trash-alt"></i>
+            </button>
+          </div>
+        </li>
+        <li class="item_row">
+          <div class="item">
+            <span class="item_name">런지</span>
+            <button class="btn_delete">
+              <i class="fas fa-trash-alt"></i>
+            </button>
+          </div>
+        </li>
+      </ul>
+      <!--푸터 영역-->
+      <footer class="footer">
+        <!--운동이름 입력화면-->
+        <input type="text" name="" class="user_input" />
+        <button class="btn_add">
+          <i class="fas fa-plus"></i>
+        </button>
+      </footer>
+    </section>
+  </body>
+</html>
