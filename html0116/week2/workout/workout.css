@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+}
+
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+ul {
+  padding-left: 0px;
+}
+.add-input{
+  font-size: 1rem;
+  margin-right: 0.2em;
+}
+.add-button{
+  height:100%;
+  font-size:0.8rem;
+  padding :0.3em 0.5em;
+  background-color: green;
+  color: aliceblue;
+}
+.container {
+  padding: 0.5em;
+  font-size: 1.5rem; /*16px 디폴트*/
+}
+
+.workout {
+  list-style: none;
+}
+
+.workout-button {
+  font-size: 2.5rem;
+  margin-top: 0 0.1em;
+  background-color: transparent;
+}
+
+.workout-button:hover {
+  opacity: 0.8;
+}
+
+.workout-increase,
+.workout-decrease {
+  color: goldenrod;
+}
+
+.workout-delete {
+  color: brown;
+}

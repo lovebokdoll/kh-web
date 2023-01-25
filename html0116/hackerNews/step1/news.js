@@ -7,14 +7,14 @@ const requestOptions = {
 
 fetch("https://api.hnpwa.com/v0/news/1.json", requestOptions)
   .then((response) => response.json())
-  // .then((result) => console.log(result))
+ // .then((result) => console.log(result))
   .then((result) => {
-    const ul=document.createElement("ul");//DOM API
+    const ul = document.createElement("ul"); //DOM API
     addListener.innerHTML = result[i].title;
     ul.appendChild(li);
-    for (let i = 0; i<result.length; i++) {
+    for (let i = 0; i < result.length; i++) {
       console.log(result[i].title);
-    }// end of for
+    } // end of for
     document.getElementById("root").appendChild(ul);
   })
   .catch((error) => console.log("error", error));

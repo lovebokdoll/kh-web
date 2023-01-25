@@ -5,5 +5,6 @@ npm i express
 
 npm i nodemon --save-dev
               : --save-dev로컬에서만 사용하겠다는 의미
+npm install -g nodemon
 
   <script src="https://kit.fontawesome.com/0f3d0186cb.js" crossorigin="anonymous"></script>
