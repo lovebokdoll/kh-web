@@ -1,4 +1,5 @@
 //객체
+//데이터를 property라는 인덱싱을 통해 구조적으로 묶어놓은 형태
 
 const father = {
   name: "이순신",
@@ -41,7 +42,7 @@ console.log(studentA);
 console.log(studentB);
 
 const students = [studentA, studentB];
-console.log(students[0]);
+//console.log(students[0]);
 console.log(students[1]);
 console.log(students[0].name);
-console.log(students[1]["parent"]["name"]);
+ console.log(students[1]["parent"]["name"]);

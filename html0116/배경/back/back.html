@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>배경이미지</title>
+  <style>
+    *{
+      border: 1px solid black
+    }
+    body{
+      height: 3000px;
+      background-attachment: fixed;
+    }
+    div{
+      width: 500px;
+      height: 500px;
+      display: inline-block;
+      /* background-color: aquamarine;  */
+      /* background-color: transparent; */
+      background-repeat: no-repeat;
+      /* background-size: contain; 비율유지, 요소의 더 짧은 너비에 맞춤*/
+      /* background-size: cover; 비율유지, 요소의 더 넓은 너비에 맞춤 */
+      background-size: auto;
+      background-position: center;
+      background-image: url("../images/sample/apple_280x280.jpg");
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam autem aperiam expedita libero magnam rerum facere? Eum vel expedita dolorum.</p>
+</body>
+</html>
