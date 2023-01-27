@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>키보드이벤트</title>
+    <link rel="stylesheet" href="./menu.css" />
+    <script defer src="./menu.js"></script>
+  </head>
+  <body>
+    <script>
+      window.addEventListener("keyup", (e) => {
+        //console.log(e);
+        if (e.key === "Enter") {
+          console.log("엔터쳤냐");
+        }
+      });
+    </script>
+  </body>
+</html>
+
+<!-- 
+  key down :특정 키를 누르고 있을 때
+  key up:특정 키를 누르다 손을 떼면
+  krypress : 키를 누르고 있을 때
+ -->
