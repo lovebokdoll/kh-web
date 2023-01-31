@@ -1,7 +1,8 @@
 const a = document.querySelector("a");
 
 a.addEventListener("click", (event) => {
-  event.preventDefault();
+  event.preventDefault(); //이벤트 동작 중단시킨다.
+  alert("e.preventDefault()");
 });
 
 const box = document.querySelector(".box");

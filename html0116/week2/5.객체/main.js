@@ -33,6 +33,7 @@ const studentA = {
   name: "정다희",
   age: 29,
 };
+
 const studentB = {
   name: "다쿠",
   age: 29,

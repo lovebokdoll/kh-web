@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./step1.css" />
+    <script
+      src="https://kit.fontawesome.com/0f3d0186cb.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- Navbar Start-->
+    <nav id="navbar">
+      <!-- LOGO -->
+      <div class="navbar_logo">
+        <i class="fab fa-diaspora"></i>
+        <a href="#">Skill Inventory</a>
+      </div>
+      <!-- 메뉴아이템 -->
+      <div class="div_menu">
+        <ul class="navbar_menu">
+          <li class="nav_menu_item active" data_link="#home">Home</li>
+          <li class="nav_menu_item active" data_link="#me">Me</li>
+          <li class="nav_menu_item active" data_link="#skills">Skills</li>
+          <li class="nav_menu_item active" data_link="#project">Project</li>
+          <li class="nav_menu_item active" data_link="#contact">Contact</li>
+        </ul>
+      </div>
+      <!-- 버거 아이콘 -->
+      <div class="burger_toggle_btn">
+        <i class="fas fa-bars"></i>
+      </div>
+      <script>
+        const navbarMenu = document.querySelector(".navbar_menu");
+        const buggerIcon = document.querySelector(".burger_toggle_btn");
+        buggerIcon.addEventListener("click", () => {
+          navbarMenu.classList.toggle("open");
+        });
+      </script>
+      <!-- 버거 아이콘 -->
+    </nav>
+    <!-- Navbar End-->
+    <!-- Home Start-->
+    <section id="home" class="section">
+      <!-- 메뉴 클릭시 data link값으로 사용 -->
+      <div class="hcontent">사진</div>
+    </section>
+    <!-- Home End-->
+    <!-- Me Start-->
+    <section id="me" class="section">
+      <div class="mcontent">나에 대해</div>
+    </section>
+    <!-- Me End-->
+    <!-- Skills Start -->
+    <section id="skills" class="section">
+      <div class="scontent">보유기술</div>
+    </section>
+
+    <!-- Skills End -->
+    <!-- Project Start-->
+    <section id="project" class="section">
+      <div class="pcontent">프로젝트</div>
+    </section>
+    <!-- Project End-->
+    <!-- Contact Start-->
+    <section id="contact" class="section">
+      <div class="ccontent">
+        <h2 class="contact_email">이메일주소</h2>
+        <div class="contact_links">
+          <a href="https://github.com/lovebokdoll" target="_blink"
+            ><i class="fab fa-github"></i>
+          </a>
+          <!-- <a href="#" target="_self"><i class="fab fa-github"></i> </a> -->
+          <!-- _self하는 경우 현재 창에서 띄워짐 -->
+        </div>
+        <p class="contact_rights">2023 정다희 - All rights reserved</p>
+      </div>
+    </section>
+    <!-- Contact End-->s
+  </body>
+</html>
