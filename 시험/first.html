@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./first.css" />
+  </head>
+  <body>
+    <fieldset style="width: 400px; height: 200">
+      <legend>공지사항 작성하기</legend>
+      <form name="공지사항 작성하기" action="insert.no" method="post">
+        <span>제목</span>
+        <input
+          class="title"
+          type="text"
+          name="title"
+          placeholder="제목을 입력하시오."
+        />
+        <br />
+
+        <span>내용</span>
+        <input
+          class="content"
+          type="text"
+          name="content"
+          placeholder="내용을 입력하시오."
+        />
+        <br />
+
+        <span>첨부파일</span>
+        <input class="uploadFile" type="file" name="uploadFile" /><br />
+
+        <button class="button">작성하기</button>
+      </form>
+    </fieldset>
+  </body>
+</html>

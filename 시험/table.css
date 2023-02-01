@@ -1,0 +1,21 @@
+.table_title {
+  background-color: orange;
+}
+.title {
+  background-color: orange;
+}
+.contents {
+  width: 350px;
+}
+.제목 {
+  width: 400px;
+  background-color: orange;
+}
+.작성자,
+.작성일 {
+  width: 100px;
+  background-color: orange;
+}
+.공지사항갯수 {
+  background-color: orange;
+}
