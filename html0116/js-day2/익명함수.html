@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>익명함수</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      //text/javascript ->나중에 이 자리에 module을 사용-> 구글 API사용할때~~~
+
+      const words = [
+        "spray",
+        "limit",
+        "elite",
+        "exuberant",
+        "destruction",
+        "present",
+      ];
+
+      const result = words.filter((word, index) => word.length > 6);
+      console.log(result);
+      document.write(typeof result); //=> 배열
+      document.write("<br/>");
+      document.write(result[0]);
+      document.write("<br/>");
+      document.write(result[1]);
+      document.write("<br/>");
+      document.write(result[2]);
+
+      //구조분해할당!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      //배열 [ ]
+      const [r1, r2, r3] = result;
+      document.write("<hr>");
+      document.write(r1, " ", r2, " ", r3);
+      //객체의 구조분해 할당 - { }사용합니데이
+      let student = {
+        name: "정다희",
+        age: 35,
+        address: "서울시 마포구 공덕동",
+      };
+
+      let { name, age, address } = student;
+      document.write("<hr>");
+      document.write(name);
+      document.write(age);
+      document.write(address);
+      document.write(`${name} ${age} ${address}`);
+    </script>
+  </body>
+</html>

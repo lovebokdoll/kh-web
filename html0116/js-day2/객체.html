@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>객체</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      /*
+       객체 : Object
+       데이터를 property라는 인덱싱을 통해 구조적으로 묶어놓음
+       */
+      let student = {
+        name: "정다희",
+        age: 35,
+        address: "서울시 마포구 공덕동",
+      };
+
+      document.write(student);
+      document.write("<br />");
+      document.write(student.name);
+      document.write("<br />");
+      document.write(student["name"]);
+      document.write(student["age"]);
+      student.name = "정다희";
+      document.write(student["name"]);
+    </script>
+  </body>
+</html>
