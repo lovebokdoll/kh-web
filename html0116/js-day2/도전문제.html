@@ -27,6 +27,7 @@
       //추가하기 -전개연산자 -2번
       //배열만 있을때 / 객체만 있을떄 / 배열안에 객체가 있을 때
       let items_copy = [...items, { id: 5, name: "레그프레스", count: 20 }];
+
       document.write("<div>");
       document.write("<table border ='1' borderColor='red'>");
       items_copy.forEach((item) => {
@@ -69,6 +70,18 @@
           ];
         }
       });
+      document.write("<div>");
+      document.write("<table border='1' borderColor='green'>");
+
+      x.forEach((item) => {
+        document.write("<tr>");
+        document.write(`<td>${item.id}</td>`);
+        document.write(`<td>${item.name}</td>`);
+        document.write(`<td>${item.count}</td>`);
+        document.write("</tr>");
+      });
+      document.write("</table>");
+      document.write("</div>");
     </script>
   </body>
 </html>
