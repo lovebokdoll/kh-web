@@ -41,5 +41,5 @@ console.log(result)
 result = colors.slice(1,-1)
 console.log(result)
 
-const result2 = ['Object null"]
-console.log(restlr2.slicr(8,-1));
+// const result2 = ['Object null"]
+// console.log(restlr2.slicr(8,-1));
