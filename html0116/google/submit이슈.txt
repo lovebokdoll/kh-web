@@ -1,0 +1,8 @@
+<a href="javascript:함수()"></a> 이 경우에는 submit에 대한 이슈가 없음
+
+<input type ="button" value="전송"> 이 경우에도 이슈가 없음
+
+<button>전송</button> submit에대한 이슈가 있음 - 주의할것
+반드시 event.preventDefault()호출하여 이벤트 버블링 방어할 것
+=> 페이지 새로고침 발생
+=> 화면이 하얗게 변함 , 화면이 계속 렌더링

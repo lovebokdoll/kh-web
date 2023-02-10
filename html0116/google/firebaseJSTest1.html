@@ -25,11 +25,102 @@ type = text/javascript사용하는 경우와 module사용하는 경우 호환이
         //console.log(e.target + e.currentTarget);
         authLogic.login("Google").then((snapshot) => {
           console.log(snapshot);
+          //구글서버에서 응답으로 받은 정보를 문자열로 변환함
+          const temp = JSON.stringify(snapshot);
+          //위에서 변환된 정보를 배열로 변환
+          const jsonDoc = JSON.parse(temp);
+          //uid -  구글에서 할당되는 아이디값 - 이게 바뀌면 다른사람임
+          //displayName - 구글계정이름
+          //email- 구글계정 이메일
+          console.log(jsonDoc.user.displayName);
         });
       });
+      const moveMain = (displayName) => {
+        console.log("moveMain=>" + displayName);
+        window.location.href = "./index.html?displayName=" + displayName;
+      };
+      //구글서버에서 상태값의 변화를 체크하고 자동으로 호출해줌
+      //개발자가 호출하는 함수가 아님
+      //파라미터 user가 바뀌면 자동으로 호출된다는것
+      authLogic.onAuthChange((user) => {
+        //리액트에서 빈번하게 사용됨
+        user && moveMain(user.displayName);
+        //document.write('<a href="javascript:signOut();">로그아웃</a>');
+      });
+      function signOut() {
+        console.log("로그아웃");
+        //import문 사용시 주의할 것은 반드시 type="module"추가할 것
+        //text/javascript와 module사이에는 호환이 안됨 - 고려한 코딩 전개하기
+        //이러한 경우 유일한 해결방법은 직접함수 호출이 안되고
+        //태그의 아이디를 사용하여 addEventListener로 함수처리할것
+        authLogic.logout();
+      }
       //btnGoogle.onclick;
       // onclick 함수는 버튼이 마지막껄로 쓰여서 사용하지 않음
     </script>
     <button id="btnGoogle">구글로그인</button>
   </body>
 </html>
+<!-- 
+  http://localhost:5500/google/firebaseJSTest1.html
+  user
+: 
+Ae
+accessToken
+: 
+"eyJhbGciOiJSUzI1NiIsImtpZCI6IjVhNTA5ZjAxOWY3MGQ3NzlkODBmMTUyZDFhNWQzMzgxMWFiN2NlZjciLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoi7KCV64uk7Z2sIiwicGljdHVyZSI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FFZEZUcDZNdDZmUDg0UUxuYVZaRFVhX1A5NFBZQ3c0M0JHMG9DdTJnSUI4Z1E9czk2LWMiLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20va2gyMjExMjgtN2IxOTEiLCJhdWQiOiJraDIyMTEyOC03YjE5MSIsImF1dGhfdGltZSI6MTY3NTgxNDYwOSwidXNlcl9pZCI6IlVTUHdpRnJJd0FNb0cxQmY1SkJrblFUTk8ycDIiLCJzdWIiOiJVU1B3aUZySXdBTW9HMUJmNUpCa25RVE5PMnAyIiwiaWF0IjoxNjc1ODE0NjA5LCJleHAiOjE2NzU4MTgyMDksImVtYWlsIjoiZGx0bWZla2dtbEBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJnb29nbGUuY29tIjpbIjEwNzk0Nzc1Mjg5OTYwNTY0OTM4OSJdLCJlbWFpbCI6WyJkbHRtZmVrZ21sQGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6Imdvb2dsZS5jb20ifX0.JV-D641q-HiO2yjsV-SeA4tKJaZfiRz27ze51fKByz1BqOKvJkbAuVyuNaVS-xBSQV67Tm2m9h44BCnKV4FseN1Tqv7BA9XrvmS1BKZHOgNkHWZ09sW8pbQ_7wQczhu1_vyv-c2QuuOl-pbCNrooTBpUTklpZG6fqHz7sQqTbOkYaqxEQZfX_i9rNW5PnK3AMkQdaDJS8dt2LIgFGvK9YrHuoSydhvqU1VYfIhEqix98YR_Rkr-DCEQweeQMpjzTgOlxYEIMLe4-K1XL5Nx_3QCWdmF7MR9-JKa6xQ06Bso3ZOFJooekUEbNyLXHZfZ8l0e5dgqD6RcyaPkru3pXeA"
+auth
+: 
+We {app: FirebaseAppImpl, heartbeatServiceProvider: Provider, config: {…}, currentUser: Ae, emulatorConfig: null, …}
+displayName
+: 
+"정다희"
+email
+: 
+"dltmfekgml@gmail.com"
+emailVerified
+: 
+true
+isAnonymous
+: 
+false
+metadata
+: 
+Te {createdAt: '1675741556703', lastLoginAt: '1675814609439', lastSignInTime: 'Wed, 08 Feb 2023 00:03:29 GMT', creationTime: 'Tue, 07 Feb 2023 03:45:56 GMT'}
+phoneNumber
+: 
+null
+photoURL
+: 
+"https://lh3.googleusercontent.com/a/AEdFTp6Mt6fP84QLnaVZDUa_P94PYCw43BG0oCu2gIB8gQ=s96-c"
+proactiveRefresh
+: 
+ye {user: Ae, isRunning: false, timerId: null, errorBackoff: 30000}
+providerData
+: 
+[{…}]
+providerId
+: 
+"firebase"
+reloadListener
+: 
+null
+reloadUserInfo
+: 
+{localId: 'USPwiFrIwAMoG1Bf5JBknQTNO2p2', email: 'dltmfekgml@gmail.com', displayName: '정다희', photoUrl: 'https://lh3.googleusercontent.com/a/AEdFTp6Mt6fP84QLnaVZDUa_P94PYCw43BG0oCu2gIB8gQ=s96-c', emailVerified: true, …}
+stsTokenManager
+: 
+ke {refreshToken: 'APJWN8etArUDi3mFa7r0caTqIvIima6hB8Uvx9y1CjstjXmU5k…-tr-3FuC5QeTEBUp9VhaFlpNABAtlH09DpfAfKXlxriWDTLiU', accessToken: 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjVhNTA5ZjAxOWY3MGQ3Nz…Q06Bso3ZOFJooekUEbNyLXHZfZ8l0e5dgqD6RcyaPkru3pXeA', expirationTime: 1675818210320}
+tenantId
+: 
+null
+uid
+: 
+"USPwiFrIwAMoG1Bf5JBknQTNO2p2"
+refreshToken
+: 
+(...)
+[[Prototype]]
+: 
+Object
+ -->
