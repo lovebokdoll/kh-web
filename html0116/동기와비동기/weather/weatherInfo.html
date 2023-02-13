@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>날씨조회</title>
+  </head>
+  <body>
+    <h3 id="cTime">현재시간 : </h3>
+    <h2 class="icon"></h2>
+    <h2 class="cTemp">현재온도:</h2>
+    <h2 class="maxTemp">최고온도:</h2>
+    <h2 class="minTemp">최저온도:</h2>
+    
+   <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script></script>
+  <script>
+    $.getJSON('https://api.openweathermap.org/data/2.5/weather?appid=677763689d36b1e4db5e1a41dd924d42&q=seoul&units=metric',
+              (result)=>{
+                console.log(result);
+                console.log(result.dt);
+                console.log(result.main);
+                console.log(result.main.temp);
+                console.log(result.weather);
+                console.log(result.weather[0].icon);
+        
+
+                const timeFormat = (t)=>{
+                  const cdate =new Date(t*1000)
+                  const hour = cdate.getHours()
+                  const min = cdate.getMinutes()
+                  const sec = cdate.getSeconds()
+                  return `${hour}:${min}:${sec}`;
+                };
+                 const dt = result.dt
+                 const test = timeFormat(dt) 
+                 $('#cTime').append(timeFormat(dt));
+              
+              const iconURL = `<img src="http://openweathermap.org/img/wn/${result.weather[0].icon}.png" alt="${result.weather[0].description}">`;
+            $('.icon').html(iconURL) ;
+
+            const temp = result.main.temp
+            $('.cTemp').append(temp);
+
+            const maxtemp = result.main.temp_max
+            $('.maxTemp').append(maxtemp);
+
+           const mintemp = result.main.temp_min
+            $('.minTemp').append(mintemp);
+            });
+
+  </script>
+  </body>
+</html>
